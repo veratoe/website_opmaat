@@ -11,25 +11,15 @@
         <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css" />
         <link href="https://fonts.googleapis.com/css?family=Amatic+SC&display=swap" rel="stylesheet">
 
-        <style>
+        <style>      
 
-            .jumbotron.opmaat {
-                padding: 0;
-                position: relative;
-                max-height: 880px;
+            /* deze moet nog weg, wat veroorzaakt overflow? */
+            section { 
                 overflow: hidden;
             }
 
-            .jumbotron.opmaat #jumbo_img {
-                width: 80%;
-                margin: 0 auto;
-                display: block;
-            }  
-            @media only screen and (max-width: 600px) {
-                .jumbotron.opmaat #jumbo_img {
-                    width: 150%;
-                }
-
+            .amatic {
+                font-family: 'Amatic SC', sans-serif;
             }
 
             @media only screen and (max-width: 600px) {
@@ -44,8 +34,18 @@
 
             }
 
+            .jumbotron#op_maat {
+                margin: 0 auto;
+                display: block;
+                padding: 0;
+            }  
+
+            .jumbotron#op_maat img {
+                width: 100%;
+            }
+
             .jumbotron .banner {
-                position: absolute;
+                /* position: absolute; */
                 bottom: 0;
                 background-color: rgba(190, 22, 34, 0.75);
                 padding: 1rem;
@@ -57,7 +57,9 @@
 
             .jumbotron .banner h1 {
                 color: white;
+                margin: 0;
                 font-size: 100px;
+                padding: 0.5em;
 
             }
 
@@ -73,23 +75,19 @@
 
             }
 
-            .amatic {
-                font-family: 'Amatic SC', sans-serif;
+            .has_quotes span.lquote, .has_quotes span.rquote {
+                font-size: 4em;
+                color: #aaa;
+                font-family: serif;
+
             }
 
             .has_quotes span.lquote {
-                font-size: 90px;
                 left: -30px;
-                color: #aaa;
-                font-family: serif;
-
             }
 
             .has_quotes span.rquote {
-                font-size: 90px;
                 right: -30px;
-                color: #aaa;
-                font-family: serif;
                 bottom: -30px;
             }
 
@@ -106,6 +104,10 @@
 
                 .has_quotes span.rquote {   
                     right: 0;
+                }
+
+                #main_quote {
+                    font-size: 24px;
                 }
             }
 
@@ -217,19 +219,19 @@
     </head>
 
     <body>
-            <header>
+            <header class="fixed-top">
                 <div class="navbar fixed-top navbar-light bg-light p-md-5" id="opmaat_header">
                     <div class="container">
                         <img src="images/logo.png" id="logo">
-                        <h2>WUB</h2>
+                        <h3>073-1234567</h3>
                     </div>
                 </div>
             </header>
 
             <main role="main">
 
-                <section class="jumbotron opmaat bg-light pt-3">
-                        <img id="jumbo_img" src="images/Opmaat_Studiebegeleiding_Den-Bosch_12.jpg" />
+                <section class="jumbotron pt-3" id="op_maat">
+                        <img class="d-sm-none d-block" src="images/jumbo_mobile.jpg" /> 
                         <div class="banner">
                             <h1 class="amatic">Huiswerkbegeleiding</h1>
                         </div>
@@ -237,6 +239,7 @@
                     </div>
                 </section>
 
+           
                 <section>
                     <div class="container">
                         <div class="row">
@@ -246,7 +249,7 @@
                             <div class="col-md-6">
                                 <div class="has_quotes position-relative">
                                     <span class="lquote position-absolute">&ldquo;</span>
-                                    <h4 class="p-5 quote">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                                    <h4 id="main_quote" class="p-5 quote">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                                      sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
                                       quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</h4>
                                     <span class="rquote position-absolute">&rdquo;</span>
@@ -429,8 +432,7 @@
                                             <span class="sr-only">Previous</span>
                                           </a>
                                           <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
-                                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                            <span class="sr-only">Next</span>
+                                            <span class="carousel-control-next-icon" aria-hidden="true"></span> <span class="sr-only">Next</span>
                                           </a>
 
                                         </div>
@@ -446,7 +448,7 @@
                 </section>
 
                 <section>
-                    <div class="container-fluid" style="overflow: hidden">>
+                    <div class="container-fluid" style="overflow: hidden">
                         <img src="images/huiswerkbegeleiding.jpg" class="across_screen" style="left: -700px">
                     </div>
                 </section>
@@ -457,13 +459,12 @@
                             <h1 class="amatic mx-auto">Een goed begin is het halve werk!</h1>
 
                         </div>
-                        <div class="row" style="min-height: 550px">
+                        <!-- <div class="row" style="min-height: 550px">
                             <div class="col-sm ">
-                                <div class="box box_to_right p-5">
-                                        <div style="margin-top: 50px; width: 350px; height: 350px; background: #0e71b8; border-radius: 400px; float: right">
+                                <div class="box box_to_right p-lg-5">
+                                        <div style="margin-top: 50px; width: 350px; height: 350px; background: #0e71b8; border-radius: 180px; float: right">
                                             <img src="images/OpMaat-sterrekijker.png" style="position: relative; top: 80px" />
                                         </div>
-                                    <!-- <h3 class="onderschrift amatic mx-auto text-center font-weight-bold"> I) Afstemmen op de behoeften van uw kind</h3> -->
                                 </div>
                             </div>
                             <div class="col-sm">
@@ -475,7 +476,7 @@
                                 </div>
 
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                 </section>
 
@@ -485,7 +486,7 @@
                             <h1 class="amatic mx-auto pt-5" style="color: white">Over Op Maat</h1>
                         </div>
                         <div class="row">
-                            <div class="col-4 mx-auto m-5" style="color: white; font-size: 20px;">
+                            <div class="col-lg-4 m-5" style="color: white; font-size: 20px;">
                                <p>
                                     "Uw kind een zo goed mogelijke uitgangspositie geven in het leven, 
                                 passend bij zijn of haar capaciteiten en talenten."
@@ -578,21 +579,21 @@
 
                             <div class="row">
                                 <div class="col-2"></div>
-                                <div class="col-2">
+                                <div class="col-lg-2 text-center">
                                     <h3 class="amatic"> Bezoekadres </h3>
                                     <p> Verwerstraat 27<br> 5211 HT Den Bosch</p>
                                 </div>
 
                                 <div class="col-1"></div>
 
-                                <div class="col-2">
+                                <div class="col-lg-2 text-center">
                                     <h3 class="amatic">Bellen en mailen  </h3>
                                     <p> Verwerstraat 27<br> 5211 HT Den Bosch</p>
                                 </div>
 
                                 <div class="col-1"></div>
 
-                                <div class="col-2">
+                                <div class="col-lg-2 text-center">
                                     <h3 class="amatic"> Openingstijden</h3>
                                     <p> Verwerstraat 27<br> 5211 HT Den Bosch</p>
                                 </div>
