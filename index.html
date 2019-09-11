@@ -13,6 +13,11 @@
 
         <style>      
 
+            h1 {
+                max-width: 70%;
+                text-align: center;
+            }
+
             /* deze moet nog weg, wat veroorzaakt overflow? */
             section { 
                 overflow: hidden;
@@ -38,6 +43,8 @@
                 margin: 0 auto;
                 display: block;
                 padding: 0;
+                position: relative;
+                border-radius: 0;
             }  
 
             .jumbotron#op_maat img {
@@ -50,10 +57,27 @@
                 background-color: rgba(190, 22, 34, 0.75);
                 padding: 1rem;
                 text-align: center;
-               
                 width: 100%;
 
             }
+
+            @media only screen and (min-width: 600px) {
+
+                .jumbotron#op_maat img {
+                    max-width: 70%;
+                    display: block;
+                    margin: 0 auto;
+                }
+
+                .jumbotron#op_maat .banner {
+                    position: absolute;
+                }
+
+                .jumbotron#op_maat .banner h1 {
+                    padding: 0.1em;
+                }
+            }
+
 
             .jumbotron .banner h1 {
                 color: white;
@@ -187,7 +211,25 @@
             .container-fluid img.across_screen {
                 max-width: 100%;
             }
+           
+            #telescoop { 
+                margin-top: 50px; 
+                width: 350px; 
+                height: 350px;
+                background: #0e71b8;
+                border-radius: 180px;
+                float: right
+            }
+            
+            @media only screen and (max-width: 600px) {
 
+                #telescoop { 
+                    float: none;
+                    width: 300px;
+                    height: 300px;
+                    margin: 0 auto;
+                }
+            }
             
             @media only screen and (max-width: 1023px) {
 
@@ -232,6 +274,7 @@
 
                 <section class="jumbotron pt-3" id="op_maat">
                         <img class="d-sm-none d-block" src="images/jumbo_mobile.jpg" /> 
+                        <img class="d-sm-block d-none" src="images/Opmaat_Studiebegeleiding_Den-Bosch_12.jpg" />
                         <div class="banner">
                             <h1 class="amatic">Huiswerkbegeleiding</h1>
                         </div>
@@ -459,10 +502,10 @@
                             <h1 class="amatic mx-auto">Een goed begin is het halve werk!</h1>
 
                         </div>
-                        <!-- <div class="row" style="min-height: 550px">
+                        <div class="row" style="min-height: 550px">
                             <div class="col-sm ">
                                 <div class="box box_to_right p-lg-5">
-                                        <div style="margin-top: 50px; width: 350px; height: 350px; background: #0e71b8; border-radius: 180px; float: right">
+                                        <div id="telescoop">
                                             <img src="images/OpMaat-sterrekijker.png" style="position: relative; top: 80px" />
                                         </div>
                                 </div>
@@ -476,7 +519,7 @@
                                 </div>
 
                             </div>
-                        </div> -->
+                        </div>
                     </div>
                 </section>
 
