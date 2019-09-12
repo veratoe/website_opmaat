@@ -13,9 +13,51 @@
 
         <style>      
 
+            * {
+                color: #555;
+            }
+
+
             h1 {
                 max-width: 70%;
                 text-align: center;
+            }
+ 
+            h1.amatic {
+                font-size: 4em;
+                font-weight: bold;
+                color: #0e71b8;
+                margin-top: 30px;
+            } 
+
+            h3.amatic {
+                color: #0e71b8;
+                font-weight: bold;
+                font-size: 40px;
+                padding: 20px 0px;
+            }
+
+            #opmaat_header a {
+                color: inherit;
+                text-decoration: inherit;
+            }
+
+            #opmaat_header .phone_icon {
+                width: 25px;
+                margin-right: 10px;
+            }
+
+
+            @media only screen and (max-width: 600px) {
+
+                #opmaat_header h3 {
+                    font-size: 1.25rem;
+                }
+
+                #opmaat_header .phone_icon {
+                    width: 18px;
+                }
+
             }
 
             /* deze moet nog weg, wat veroorzaakt overflow? */
@@ -76,15 +118,15 @@
                 .jumbotron#op_maat .banner h1 {
                     padding: 0.1em;
                 }
-            }
 
+            }
 
             .jumbotron .banner h1 {
                 color: white;
-                margin: 0;
-                font-size: 100px;
-                padding: 0.5em;
-
+                margin: 0 auto;
+                font-size: 5em;
+                padding: 0.5em 0em;
+                display: block;
             }
 
             @media only screen and (max-width: 600px) {
@@ -94,7 +136,7 @@
                 }
 
                 .jumbotron .banner h1{
-                    font-size: 3em;
+                    font-size: 2.6em;
                 }
 
             }
@@ -132,6 +174,7 @@
 
                 #main_quote {
                     font-size: 24px;
+                    padding-top: 50px;
                 }
             }
 
@@ -180,7 +223,6 @@
                     max-width: 100%;
                     box-sizing: border-box;
                 }
-
             
             }
             
@@ -201,17 +243,18 @@
                 font-weight: bold;
             }
 
-            h1.amatic {
-                font-size: 80px;
-                font-weight: bold;
-                color: #0e71b8;
-                margin-top: 30px;
+            .carousel-indicators li {
+                background-color: #0e71b8;
+                height: 13px;
             }
+           
+
 
             .container-fluid img.across_screen {
                 max-width: 100%;
             }
-           
+
+          
             #telescoop { 
                 margin-top: 50px; 
                 width: 350px; 
@@ -233,10 +276,6 @@
             
             @media only screen and (max-width: 1023px) {
 
-                h1.amatic {
-                    font-size: 40px;
-                }
-
                 .container-fluid img.across_screen {
                     max-width: 330%;
                     left: -460px;
@@ -244,7 +283,20 @@
                 }
 
             }
+            
+            @media only screen and (min-width: 568px) {
 
+                .team_member {
+                        max-width: 376px;
+
+                    }
+
+            }
+
+            .team_member img {
+                max-width: 100%;
+            }
+   
             .team_member h3 {
                 color:#0e71b8;
                 font-weight: bold;
@@ -253,7 +305,38 @@
             }
 
             .team_member p {
-                font-size: 0.9em;
+                font-size: 1em;
+            }
+
+            .footer_block{
+                padding: 2em 2em;
+            }
+
+            .footer_block img {
+                float: left;
+            }
+
+            .footer_block p.adres {
+                float: left;
+                margin-left: 20px;
+            }
+
+            @media only screen and (max-width: 1023px) {
+
+                .footer_block {
+                    text-align: center;
+                }
+
+                .footer_block img {
+                    float: none;
+                    margin: 0 0 20px 0;
+                }
+
+                .footer_block p.adres {
+                    float: none;
+                    margin-left: 0;
+                }
+
             }
 
         </style>
@@ -265,7 +348,8 @@
                 <div class="navbar fixed-top navbar-light bg-light p-md-5" id="opmaat_header">
                     <div class="container">
                         <img src="images/logo.png" id="logo">
-                        <h3>073-1234567</h3>
+                        <span class="d-none d-lg-block" style="font-size: 40px;font-family: 'Amatic SC';font-weight: bold;color: #7b7b7b;">Start vandaag nog met begeleiding!</span>
+                        <a href="tel:0736894388"><h3><img src="images/phone.svg" width="30" class="phone_icon" />073-6894388</h3></a>
                     </div>
                 </div>
             </header>
@@ -283,7 +367,7 @@
                 </section>
 
            
-                <section>
+                <section class="pt-5 pb-5 p-3">
                     <div class="container">
                         <div class="row">
 
@@ -292,7 +376,7 @@
                             <div class="col-md-6">
                                 <div class="has_quotes position-relative">
                                     <span class="lquote position-absolute">&ldquo;</span>
-                                    <h4 id="main_quote" class="p-5 quote">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                                    <h4 id="main_quote" class="p-lg-5 quote">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                                      sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
                                       quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</h4>
                                     <span class="rquote position-absolute">&rdquo;</span>
@@ -303,7 +387,7 @@
 
                         </div>
                         <div class="row p-5">
-                            <button type="button" class="mx-auto btn btn-danger m3 p-4"><span class="amatic h2 p-2">Meer weten</span></button>
+                            <button onclick="alert('Koekoek!');" type="button" class="mx-auto btn btn-danger m3" style="padding: 10px 50px"><span class="amatic h2 p-2" style="color: white">Meer weten</span></button>
                         </div>
                     </div>
                 </section>
@@ -408,7 +492,7 @@
                     </div>
                 </section>
 
-                <section class="bg-light">
+                <section class="bg-light pb-5">
                     <div class="container">
                         <div class="row"><h1 class="amatic text-center mx-auto">Testimonials</h1></div>
                         <div class="row"><img src="images/pen.jpeg" class="mx-auto m-5" alt="" style="border: 5px solid #0e71b8; border-radius: 30px;"></h1></div>
@@ -499,7 +583,7 @@
                 <section>
                     <div class="container-fluid">
                         <div class="row">
-                            <h1 class="amatic mx-auto">Een goed begin is het halve werk!</h1>
+                            <h1 class="amatic mx-auto mb-5">Een goed begin is het halve werk!</h1>
 
                         </div>
                         <div class="row" style="min-height: 550px">
@@ -529,26 +613,27 @@
                             <h1 class="amatic mx-auto pt-5" style="color: white">Over Op Maat</h1>
                         </div>
                         <div class="row">
+                            <div class="col d-none d-sm-block "></div>
                             <div class="col-lg-4 m-5" style="color: white; font-size: 20px;">
-                               <p>
+                               <p style="color: white">
                                     "Uw kind een zo goed mogelijke uitgangspositie geven in het leven, 
                                 passend bij zijn of haar capaciteiten en talenten."
                                 </p>
                                 
-                               <p>
+                               <p style="color: white"></p>
                                 Dat is wat wij, uw kind, uzelf als ouder en het onderwijs dat 
                                 uw kind volgt, willen bereiken. Hiertoe werken wij vanuit drie belangrijke uitgangspunten:
                                 </p>
                                 
-                               <p>
+                               <p style="color: white"></p>
                                 Nederland is een van de weinige landen ter wereld, waarin de studierichtingen (ortho)pedagogiek en onderwijskunde ... Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur...
                                 </p>
                             </div>
 
+                            <div class="col d-none d-sm-block "></div>
                         </div>
                         <div class="row pb-5">
-                            <button type="button" class="mx-auto btn btn-danger m3 p-4"><span class="amatic h2 p-2">Meer weten</span></button>
-
+                            <button onclick="alert('Koekoek!');" type="button" class="mx-auto btn btn-danger m3" style="padding: 10px 50px"><span class="amatic h2 p-2" style="color: white">Meer weten</span></button>
                         </div>
                     </div>
                 </section>
@@ -566,49 +651,49 @@
 
                         <div class="row">
 
-                            <div class="col-1"></div>
+                            <div class="col-1 d-none d-lg-block"></div>
 
-                            <div class="col-lg-2 team_member p-5">
-                                <img src="images/anjuli.jpg" style="max-width: 100%" />
+                            <div class="col-lg-2 team_member p-lg-4 p-5">
+                                <img src="images/anjuli.jpg"/>
                                 <h3 class="amatic">Anjuli</h3>
                                 <p>Anjuli is orthopedagoog met een passie voor onderwijs. 
                                     Ze is geduldig, leergierig en geïnteresseerd in de persoonlijkheid van leerlingen. 
                                     Anjuli houdt van koken, lezen, reizen en films.</p>
                             </div>
 
-                            <div class="col-lg-2 team_member p-5">
-                                <img src="images/anjuli.jpg" style="max-width: 100%" />
+                            <div class="col-lg-2 team_member p-lg-4 p-5">
+                                <img src="images/anjuli.jpg"/>
                                 <h3 class="amatic">Anjuli</h3>
                                 <p>Anjuli is orthopedagoog met een passie voor onderwijs. 
                                     Ze is geduldig, leergierig en geïnteresseerd in de persoonlijkheid van leerlingen. 
                                     Anjuli houdt van koken, lezen, reizen en films.</p>
                             </div>
 
-                            <div class="col-lg-2 team_member p-5">
-                                <img src="images/anjuli.jpg" style="max-width: 100%" />
+                            <div class="col-lg-2 team_member p-lg-4 p-5">
+                                <img src="images/anjuli.jpg"/>
                                 <h3 class="amatic">Anjuli</h3>
                                 <p>Anjuli is orthopedagoog met een passie voor onderwijs. 
                                     Ze is geduldig, leergierig en geïnteresseerd in de persoonlijkheid van leerlingen. 
                                     Anjuli houdt van koken, lezen, reizen en films.</p>
                             </div>
 
-                            <div class="col-lg-2 team_member p-5">
-                                <img src="images/anjuli.jpg" style="max-width: 100%" />
+                            <div class="col-lg-2 team_member p-lg-4 p-5">
+                                <img src="images/anjuli.jpg"/>
                                 <h3 class="amatic">Anjuli</h3>
                                 <p>Anjuli is orthopedagoog met een passie voor onderwijs. 
                                     Ze is geduldig, leergierig en geïnteresseerd in de persoonlijkheid van leerlingen. 
                                     Anjuli houdt van koken, lezen, reizen en films.</p>
                             </div>
 
-                            <div class="col-lg-2 team_member p-5">
-                                <img src="images/anjuli.jpg" style="max-width: 100%" />
+                            <div class="col-lg-2 team_member p-lg-4 p-5">
+                                <img src="images/anjuli.jpg"/>
                                 <h3 class="amatic">Anjuli</h3>
                                 <p>Anjuli is orthopedagoog met een passie voor onderwijs. 
                                     Ze is geduldig, leergierig en geïnteresseerd in de persoonlijkheid van leerlingen. 
                                     Anjuli houdt van koken, lezen, reizen en films.</p>
                             </div>
 
-                            <div class="col-1"></div>
+                            <div class="col-1 d-none d-sm-block"></div>
                     </div>
 
                 </section>
@@ -622,26 +707,27 @@
 
                             <div class="row">
                                 <div class="col-2"></div>
-                                <div class="col-lg-2 text-center">
+                                <div class="col-lg-3 footer_block">
                                     <h3 class="amatic"> Bezoekadres </h3>
-                                    <p> Verwerstraat 27<br> 5211 HT Den Bosch</p>
+                                    <a href="https://goo.gl/maps/7eYHwDpZCs4Te12H7" target="_blank" style="margin-right: 20px;"><img src="images/map.svg" style="width: 31px;"></a>
+                                    <p class="adres"> Verwerstraat 27<br> 5211 HT Den Bosch</p>
                                 </div>
 
-                                <div class="col-1"></div>
 
-                                <div class="col-lg-2 text-center">
+                                <div class="col-lg-3 footer_block">
                                     <h3 class="amatic">Bellen en mailen  </h3>
-                                    <p> Verwerstraat 27<br> 5211 HT Den Bosch</p>
+                                    <p><img src="images/phone.svg" style="width: 25px; margin-right: 10px;"><span></span><br class="d-block d-sm-none"/> <a href="tel:0736894388"> 073-6894388</p>
+                                    <p><img src="images/email.svg" style="width: 25px; margin-right: 10px"><br class="d-block d-sm-none"/> <a href="mailto:info@opmaatstudiebegeleiding.nl">info@opmaatstudiebegeleiding.nl</a></p>
                                 </div>
 
-                                <div class="col-1"></div>
 
-                                <div class="col-lg-2 text-center">
+                                <div class="col-lg-3 footer_block">
                                     <h3 class="amatic"> Openingstijden</h3>
-                                    <p> Verwerstraat 27<br> 5211 HT Den Bosch</p>
+                                    <img src="images/business.svg" style="width: 31px; margin-right: 15px; margin-top: 10px;">
+                                    <p>ma t/m do 10:00 - 21:00<br/>
+                                    vr  10:00 - 18:00</p>
                                 </div>
 
-                                <div class="col-2"></div>
                             </div>
                         </div>
 
@@ -651,11 +737,11 @@
 
                         <div class="container-fluid background_blue">
                             <div class="row">
-                                <div class="col-2"></div>
-                                <div class="col-8 text-center p-5" style="color: white;">
-                                <p>(c) 2019 Op Maat Studiebegeleiding - Bijles - Studiebegeleiding en Huiswerkbegeleiding - Den Bosch <br> 073 689 43 88 &nbsp; of &nbsp;  06 2331 0208 - info@OpMaatStudiebegeleiding.nl </p>
+                                <div class="col-lg-2"></div>
+                                <div class="col-lg-8 text-center p-5">
+                                <p style="color: white">&copy; 2019 Op Maat Studiebegeleiding - Den Bosch <br> T: 073-6894388 &nbsp; of &nbsp; 06-23310208 - <br class="d-block d-sm-none"/> E: info@OpMaatStudiebegeleiding.nl </p>
                                 </div>
-                                <div class="col-2"></div>
+                                <div class="col-lg-2"></div>
                             </div>
                         </div>
 
