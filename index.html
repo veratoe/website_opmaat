@@ -103,10 +103,10 @@
 
             }
 
-            @media only screen and (min-width: 600px) {
+            @media only screen and (min-width: 1024px) {
 
                 .jumbotron#op_maat img {
-                    max-width: 70%;
+                    /* max-width: 80%; */
                     display: block;
                     margin: 0 auto;
                 }
@@ -231,6 +231,14 @@
                 min-height: 500px;
             }
 
+            @media only screen and (max-width: 1024px) {
+
+                .carousel-item {
+                        min-height: 650px;
+                }
+
+            }
+
             .carousel-item h5 {
                 color: #0e71b8;
                 font-size: 40px;
@@ -319,6 +327,15 @@
             .footer_block p.adres {
                 float: left;
                 margin-left: 20px;
+            }
+
+            @media only screen and (min-width: 1023px) {
+
+                .footer_block.middle {
+                    flex: 0 0 26%;
+                    max-width: 26%;
+                }
+
             }
 
             @media only screen and (max-width: 1023px) {
@@ -714,7 +731,7 @@
                                 </div>
 
 
-                                <div class="col-lg-3 footer_block">
+                                <div class="col-lg-3 footer_block middle">
                                     <h3 class="amatic">Bellen en mailen  </h3>
                                     <p><img src="images/phone.svg" style="width: 25px; margin-right: 10px;"><span></span><br class="d-block d-sm-none"/> <a href="tel:0736894388"> 073-6894388</p>
                                     <p><img src="images/email.svg" style="width: 25px; margin-right: 10px"><br class="d-block d-sm-none"/> <a href="mailto:info@opmaatstudiebegeleiding.nl">info@opmaatstudiebegeleiding.nl</a></p>
