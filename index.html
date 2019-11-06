@@ -365,6 +365,27 @@
 
             }
 
+            ul#menu {
+                
+                position: absolute;
+                display: inline-block;               
+                right: 0;
+                color: #aaa;
+            }
+
+            ul#menu li {
+                list-style: none;
+                display: inline-block;
+                font-family: 'Amatic SC', sans-serif;
+                font-size: 24px;
+                padding: 5px 10px;
+                color: #aaa;
+            }
+
+            ul#menu li:hover {
+                color: #0e71b8;
+            }
+
         </style>
 
     </head>
@@ -373,11 +394,26 @@
             <header class="fixed-top">
                 <div class="navbar fixed-top navbar-light bg-light p-md-3 p-lg-5" id="opmaat_header">
                     <div class="container">
-                        <img src="images/logo.png" id="logo">
+                        <img src="images/logo.png" id="logo"/>
                         <span class="d-none d-lg-block" style="font-size: 2.5em;font-family: 'Amatic SC';font-weight: bold;color: #7b7b7b;">Start vandaag nog met begeleiding!</span>
                         <a href="tel:0736894388"><h3><img src="images/phone.svg" width="30" class="phone_icon" />073-6894388</h3></a>
                     </div>
+                    <div class="container d-none d-lg-block" style="position: relative;">
+                            <ul class="" id="menu">
+                                    <li><a href="/bijlessen" title="Bijles Den Bosch">Bijlessen</a></li>
+                                    <li><a href="/bijles-basisschool" title="Bijles basisschool Den Bosch">Basisschool</a></li>
+                                    <li><a href="/bijles-voortgezet-onderwijs" title="Huiswerkbegeleiding en studiebegeleiding Voortgezet Onderwijs Den Bosch">Voortgezet onderwijs</a></li>
+                                    <li><a href="/prijzen">Prijzen</a></li><li class="uk-parent" data-uk-dropdown="{}" aria-haspopup="true" aria-expanded="false"><a href="/informatie">Informatie</a></li>
+                                    <li><a href="/vacatures">Vacatures</a></li><li><a href="/contact-2">Contact</a></li>
+                                </ul>
+                    </div>
                 </div>
+                <div>
+
+           
+
+                </div>
+              
             </header>
 
             <main role="main">
