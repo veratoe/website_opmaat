@@ -370,10 +370,11 @@
                 position: absolute;
                 display: inline-block;               
                 right: 0;
+                top: -20px;
                 color: #aaa;
             }
 
-            ul#menu li {
+            ul#menu li, ul#mobile_menu li {
                 list-style: none;
                 display: inline-block;
                 font-family: 'Amatic SC', sans-serif;
@@ -382,34 +383,79 @@
                 color: #aaa;
             }
 
+            ul#mobile_menu {
+                margin: 0;
+                padding: 5px;
+            }
+
+            ul#mobile_menu li {
+                display: block;
+                color: #888;
+                
+            }
+
             ul#menu li:hover {
                 color: #0e71b8;
             }
 
         </style>
 
+        <script>
+            $(function () {
+
+                $("#mobile_menu").on("show.bs.collapse", function() {                   
+                    $("img#hamburger").hide();
+                    $("img#close").show();
+                })
+
+                $("#mobile_menu").on("hide.bs.collapse", function() {                   
+                    $("img#hamburger").show();
+                    $("img#close").hide();
+                })
+
+               
+            });
+        </script>
+
     </head>
 
     <body>
+        
             <header class="fixed-top">
                 <div class="navbar fixed-top navbar-light bg-light p-md-3 p-lg-5" id="opmaat_header">
                     <div class="container">
+                        <a class="d-block d-lg-none" data-toggle="collapse" href="#mobile_menu" role="button" aria-expanded="false" aria-controls="mobile_menu">
+                            <img id="hamburger" src="images/hamburger.svg" width=20 />
+                            <img id="close" src="images/close.svg" width=20 style="display: none" />
+                        </a>
                         <img src="images/logo.png" id="logo"/>
                         <span class="d-none d-lg-block" style="font-size: 2.5em;font-family: 'Amatic SC';font-weight: bold;color: #7b7b7b;">Start vandaag nog met begeleiding!</span>
                         <a href="tel:0736894388"><h3><img src="images/phone.svg" width="30" class="phone_icon" />073-6894388</h3></a>
                     </div>
                     <div class="container d-none d-lg-block" style="position: relative;">
-                            <ul class="" id="menu">
+                            <ul id="menu">
                                     <li><a href="/bijlessen" title="Bijles Den Bosch">Bijlessen</a></li>
                                     <li><a href="/bijles-basisschool" title="Bijles basisschool Den Bosch">Basisschool</a></li>
                                     <li><a href="/bijles-voortgezet-onderwijs" title="Huiswerkbegeleiding en studiebegeleiding Voortgezet Onderwijs Den Bosch">Voortgezet onderwijs</a></li>
-                                    <li><a href="/prijzen">Prijzen</a></li><li class="uk-parent" data-uk-dropdown="{}" aria-haspopup="true" aria-expanded="false"><a href="/informatie">Informatie</a></li>
-                                    <li><a href="/vacatures">Vacatures</a></li><li><a href="/contact-2">Contact</a></li>
+                                    <li><a href="/prijzen" title="Prijzen">Prijzen</a></li>
+                                    <li><a href="/informatie" title="Informatie">Informatie</a></li>
+                                    <li><a href="/vacatures" title="Vacatures">Vacatures</a></li>
+                                    <li><a href="/contact-2" title="Contact">Contact</a></li>
+                                </ul>
+                    </div>
+                    <div class="collapse" id="mobile_menu">
+                            <ul id="mobile_menu">
+                                    <li><a href="/bijlessen" title="Bijles Den Bosch">Bijlessen</a></li>
+                                    <li><a href="/bijles-basisschool" title="Bijles basisschool Den Bosch">Basisschool</a></li>
+                                    <li><a href="/bijles-voortgezet-onderwijs" title="Huiswerkbegeleiding en studiebegeleiding Voortgezet Onderwijs Den Bosch">Voortgezet onderwijs</a></li>
+                                    <li><a href="/prijzen" title="Prijzen">Prijzen</a></li>
+                                    <li><a href="/informatie" title="Informatie">Informatie</a></li>
+                                    <li><a href="/vacatures" title="Vacatures">Vacatures</a></li>
+                                    <li><a href="/contact-2" title="Contact">Contact</a></li>
                                 </ul>
                     </div>
                 </div>
                 <div>
-
            
 
                 </div>
